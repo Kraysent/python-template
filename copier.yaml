@@ -1,6 +1,6 @@
 _skip_if_exists:
   - uv.lock
-_answers_file: .template.yml
+_answers_file: .template.yaml
 
 # ----- Questions ----- #
 

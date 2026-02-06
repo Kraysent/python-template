@@ -7,4 +7,4 @@ fix:
 	@uvx ruff check --quiet --config=pyproject.toml --fix
 
 update-template:
-	copier update --skip-answered --conflict inline
+	copier update --skip-answered --conflict inline --answers-file .template.yaml
