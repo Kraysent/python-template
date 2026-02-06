@@ -3,12 +3,13 @@ check:
 	@uvx ruff format --quiet --config=pyproject.toml --check
 	@uvx ruff check --quiet --config=pyproject.toml
 
-fix: 
+fix:
 	@uvx ruff format --quiet --config=pyproject.toml
 	@uvx ruff check --quiet --config=pyproject.toml --fix
 
+# only for mac as this is faster
 build:
-	docker build .
+	docker build . --platform linux/arm64
 
 update-template:
 	copier update --skip-answered --conflict inline --answers-file .template.yaml
