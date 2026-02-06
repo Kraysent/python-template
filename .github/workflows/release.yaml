@@ -36,5 +36,3 @@ jobs:
           tags: |
             ${{ env.IMAGE_NAME }}:${{ env.SHORT_SHA }}
             ${{ env.IMAGE_NAME }}:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
