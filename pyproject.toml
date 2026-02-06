@@ -1,0 +1,39 @@
+[project]
+name = "python-template" # TODO: rename
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff~=0.15.0",
+]
+
+[tool.ruff.lint]
+ignore = [
+    "N818", # ignore SomeException -> SomeError rule
+    "B024", # abstract class without abstract methods
+    "B017", # ignore assertRaises(Exception)
+    "B027", # empty method without abstract decorator
+]
+# see https://docs.astral.sh/ruff/rules/ for description of each rule set.
+select = [
+    "E",
+    "F",
+    "I",
+    "N",
+    "UP",
+    "YTT",
+    "B",
+    "A",
+    "C4",
+    "DTZ",
+    "PIE",
+    "RET",
+    "SLF",
+    "PTH",
+    "PLE",
+    "FLY",
+    "NPY201",
+]
