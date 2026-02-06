@@ -7,5 +7,8 @@ fix:
 	@uvx ruff format --quiet --config=pyproject.toml
 	@uvx ruff check --quiet --config=pyproject.toml --fix
 
+build:
+	docker build .
+
 update-template:
 	copier update --skip-answered --conflict inline --answers-file .template.yaml
