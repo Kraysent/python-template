@@ -1,3 +1,9 @@
+_skip_if_exists:
+  - uv.lock
+_answers_file: .template.yml
+
+# ----- Questions ----- #
+
 project_name:
   type: str
   help: What is the name of the project?
