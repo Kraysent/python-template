@@ -7,6 +7,8 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    # fixed version so no new linter/formatter errors are introduced overtime
+    # probably should not update outside the template
     "ruff~=0.15.0",
 ]
 
