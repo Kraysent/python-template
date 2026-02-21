@@ -1,3 +1,9 @@
+install:
+	uv sync
+
+install-dev:
+	uv sync --all-extras
+
 check:
 	@find . \
 		-name "*.py" \
