@@ -17,6 +17,9 @@ check:
 	@uvx ruff check \
 		--quiet \
 		--config=pyproject.toml
+	@uv run pytest \
+		--quiet \
+		--config-file=pyproject.toml
 
 fix:
 	@uvx ruff format \

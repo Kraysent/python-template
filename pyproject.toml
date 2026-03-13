@@ -10,7 +10,11 @@ dev = [
     # fixed version so no new linter/formatter errors are introduced over time
     # probably should not update outside the template
     "ruff~=0.15.0",
+    "pytest~=9.0.2",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
 
 [tool.ruff]
 line-length = 120
@@ -43,9 +47,11 @@ select = [
     "FLY",
     "NPY201",
     "PLC0415",
+    "S101",
 ]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = [
     "F403", # ignore star imports warning in __init__ files
 ]
+"tests/**" = ["S101"]
