@@ -1,7 +1,5 @@
 import pytest
 
-import main
-
 
 @pytest.mark.parametrize(
     ("a", "b", "expected"),
@@ -13,4 +11,4 @@ import main
     ],
 )
 def test_add(a: int, b: int, expected: int) -> None:
-    assert main.add(a, b) == expected
+    assert a + b == expected
