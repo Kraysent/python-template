@@ -35,6 +35,12 @@ build:
 	docker build . \
 		--platform linux/arm64
 
+new-branch:
+	@read -p "Branch name: " branch_name && \
+	base=$$(git remote show origin | sed -n '/HEAD branch/s/.*: //p') && \
+	git fetch origin $$base && \
+	git checkout -b $$branch_name origin/$$base
+
 update-template:
 	copier update \
 		--skip-answered \
