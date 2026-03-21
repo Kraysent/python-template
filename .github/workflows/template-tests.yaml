@@ -23,6 +23,10 @@ jobs:
           --data project_name=test-project
           . /tmp/test-project
 
+      - name: Verify template rendering
+        run: "! grep -r '{{' . --include='*.toml' --include='*.yaml' --include='*.py' --include='*.md'"
+        working-directory: /tmp/test-project
+
       - name: Install deps
         run: make install-dev
         working-directory: /tmp/test-project
