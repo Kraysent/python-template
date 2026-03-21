@@ -31,4 +31,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: /tmp/test-project
+          load: true
           push: false
+          tags: local/generated-test-image:latest
+
+      - name: Run generated image help
+        run: docker run --rm --entrypoint test-project local/generated-test-image:latest --help
