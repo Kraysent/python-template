@@ -1,6 +1,6 @@
 import click.testing
 
-import {{ project_name | replace('-', '_') }}.cli as cli_module
+import {{ package_name }}.cli as cli_module
 
 
 def test_cli_help_shows_usage() -> None:

@@ -6,3 +6,8 @@ _answers_file: .template.yaml
 project_name:
   type: str
   help: What is the name of the project?
+
+package_name:
+  type: str
+  default: "{{ project_name | replace('-', '_') }}"
+  when: false
