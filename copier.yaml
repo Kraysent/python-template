@@ -10,4 +10,3 @@ project_name:
 package_name:
   type: str
   default: "{{ project_name | replace('-', '_') }}"
-  when: false
