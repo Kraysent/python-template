@@ -52,6 +52,9 @@ fix:
 		--config=pyproject.toml \
 		--fix
 
+build-wheel:
+	uv build --wheel
+
 # only for mac as this is faster
 build:
 	docker build . \
