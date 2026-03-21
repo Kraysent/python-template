@@ -24,7 +24,7 @@ jobs:
           . /tmp/test-project
 
       - name: Verify template rendering
-        run: "! grep -r '{{' . --include='*.toml' --include='*.yaml' --include='*.py' --include='*.md'"
+        run: "! grep -rE '(^|[^$])\\{\\{' . --include='*.toml' --include='*.yaml' --include='*.py' --include='*.md'"
         working-directory: /tmp/test-project
 
       - name: Install deps
