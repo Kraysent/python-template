@@ -1,5 +1,4 @@
-_skip_if_exists:
-  - uv.lock
+_subdirectory: template
 _answers_file: .template.yaml
 
 # ----- Questions ----- #
