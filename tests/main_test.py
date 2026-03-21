@@ -1,14 +1,10 @@
-import pytest
+import click.testing
+
+import main
 
 
-@pytest.mark.parametrize(
-    ("a", "b", "expected"),
-    [
-        (2, 3, 5),
-        (0, 5, 5),
-        (7, 0, 7),
-        (-1, -2, -3),
-    ],
-)
-def test_add(a: int, b: int, expected: int) -> None:
-    assert a + b == expected
+def test_cli_help_shows_usage() -> None:
+    runner = click.testing.CliRunner()
+    result = runner.invoke(main.cli, ["--help"])
+    assert result.exit_code == 0
+    assert "Usage:" in result.output

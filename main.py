@@ -1,6 +1,10 @@
-def add(a: int, b: int) -> int:
-    return a + b
+import click
+
+
+@click.group()
+def cli() -> None:
+    pass
 
 
 if __name__ == "__main__":
-    print(add(11, 12))
+    cli()
