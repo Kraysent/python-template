@@ -1,0 +1,32 @@
+name: Template tests
+
+on:
+  - push
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Install copier
+        run: uv tool install copier
+
+      - name: Generate project
+        run: >
+          copier copy --defaults
+          --data project_name=test-project
+          . /tmp/test-project
+
+      - name: Install deps
+        run: make install-dev
+        working-directory: /tmp/test-project
+
+      - name: Run checks
+        run: make check
+        working-directory: /tmp/test-project
