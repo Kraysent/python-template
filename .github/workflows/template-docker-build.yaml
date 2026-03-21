@@ -21,6 +21,9 @@ jobs:
           --data project_name=test-project
           . /tmp/test-project
 
+      - name: Generate lock file
+        run: uv lock --project /tmp/test-project
+
       - name: Set up Docker runtime
         uses: docker/setup-buildx-action@v3
 
