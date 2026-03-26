@@ -1,0 +1,37 @@
+name: Template build wheel
+
+on:
+  - push
+
+jobs:
+  build-wheel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install copier
+        run: uv tool install copier
+
+      - name: Generate project
+        run: >
+          copier copy --defaults
+          --data project_name=test-project
+          . /tmp/test-project
+
+      - name: Build wheel
+        run: make wheel
+        working-directory: /tmp/test-project
+
+      - name: Verify wheel was built
+        run: ls -1 dist/*.whl
+        working-directory: /tmp/test-project
+
+      - name: Install wheel as tool
+        run: uv tool install --from dist/*.whl test-project
+        working-directory: /tmp/test-project
+
+      - name: Check CLI help
+        run: test-project --help
