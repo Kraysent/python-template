@@ -3,6 +3,9 @@ name: Validate generated workflows
 on:
   - push
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest

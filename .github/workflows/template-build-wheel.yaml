@@ -3,6 +3,9 @@ name: Template build wheel
 on:
   - push
 
+permissions:
+  contents: read
+
 jobs:
   build-wheel:
     runs-on: ubuntu-latest

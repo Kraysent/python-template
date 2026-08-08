@@ -3,6 +3,9 @@ name: Template tests
 on:
   - push
 
+permissions:
+  contents: read
+
 jobs:
   generate:
     runs-on: ubuntu-latest
