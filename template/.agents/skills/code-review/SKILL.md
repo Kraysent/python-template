@@ -34,6 +34,11 @@ You MUST adhere to this form because it will be later used by automation to crea
 
 If the rule asks for a citation, put it in the `description` field.
 
+To fetch the full diff use
+```shell
+git fetch origin && git diff origin/master...HEAD
+```
+
 Below are rules you should check when reviewing the code.
 
 ### duplicate-code
