@@ -123,3 +123,7 @@ subprocess/os.system/os.popen runs a shell with concatenated or formatted user/e
 ### pointless-wrapper
 
 A new or changed function or method only forwards to another callable with the same arguments and return value, adding no conversion, validation, defaulting, error handling, or other logic. Only flag when call sites could invoke the inner callable directly, the wrapper does not implement an interface, protocol, or abstract method, and it is not a public re-export of a private or third-party symbol.
+
+### redundant-parameter
+
+All callers of a new or changed function, method or class pass the same value for the parameter such that a parameter can be deleted without affecting any behaviour of all callers.
