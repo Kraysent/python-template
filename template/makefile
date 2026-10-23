@@ -55,11 +55,6 @@ fix:
 wheel:
 	uv build --wheel
 
-# only for mac as this is faster
-build:
-	docker build . \
-		--platform linux/arm64
-
 new-branch:
 	@read -p "Branch name: " branch_name && \
 	branch_name=$${branch_name// /-} && \
